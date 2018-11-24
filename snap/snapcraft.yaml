@@ -14,6 +14,7 @@ apps:
 build-packages:
   - build-essential
   - libffi-dev
+  - pkg-config
 
 parts:
     micropython:
