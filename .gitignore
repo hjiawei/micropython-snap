@@ -1,0 +1,13 @@
+# python
+__pycache__/
+
+# snapcraft
+parts/
+prime/
+snap/.snapcraft
+stage/
+micropython*.snap
+
+# vim
+[._]*.sw[a-p]
+*~
