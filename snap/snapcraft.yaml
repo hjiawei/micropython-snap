@@ -1,7 +1,7 @@
 name: micropython
 version: "1.9.4"
 summary: MicroPython
-description: >
+description: |
     MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
 
 grade: devel
@@ -9,12 +9,17 @@ confinement: devmode
 
 apps:
     micropython:
-        command: micropython
+        command: bin/micropython
+
 parts:
     micropython:
-        plugin: micropython-make
-        artifacts:
-            - micropython
+        plugin: nil
         source: https://github.com/micropython/micropython/releases/download/v1.9.4/micropython-1.9.4.tar.gz
-        source-subdir: ports/unix
         source-type: tar
+        override-build: |
+          cd ports/unix
+          make axtls && make
+          mkdir $SNAPCRAFT_PART_INSTALL/bin
+          cp micropython $SNAPCRAFT_PART_INSTALL/bin
+        prime:
+          - bin
