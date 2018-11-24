@@ -11,6 +11,10 @@ apps:
     micropython:
         command: bin/micropython
 
+build-packages:
+  - build-essential
+  - libffi-dev
+
 parts:
     micropython:
         plugin: nil
