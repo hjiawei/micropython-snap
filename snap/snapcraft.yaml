@@ -2,17 +2,17 @@ name: micropython
 version: "1.9.4"
 summary: Unofficial MicroPython Unix port
 description: |
-    MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
+  MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
 
 grade: stable
 confinement: strict
 
 apps:
-    micropython:
-        command: bin/micropython
-        plugs:
-          - home
-          - network
+  micropython:
+    command: bin/micropython
+    plugs:
+      - home
+      - network
 
 build-packages:
   - build-essential
@@ -20,14 +20,14 @@ build-packages:
   - pkg-config
 
 parts:
-    micropython:
-        plugin: nil
-        source: https://github.com/micropython/micropython/releases/download/v1.9.4/micropython-1.9.4.tar.gz
-        source-type: tar
-        override-build: |
-          cd ports/unix
-          make axtls && make
-          mkdir $SNAPCRAFT_PART_INSTALL/bin
-          cp micropython $SNAPCRAFT_PART_INSTALL/bin
-        prime:
-          - bin
+  micropython:
+    plugin: nil
+    source: https://github.com/micropython/micropython/releases/download/v1.9.4/micropython-1.9.4.tar.gz
+    source-type: tar
+    override-build: |
+      cd ports/unix
+      make axtls && make
+      mkdir $SNAPCRAFT_PART_INSTALL/bin
+      cp micropython $SNAPCRAFT_PART_INSTALL/bin
+    prime:
+      - bin
