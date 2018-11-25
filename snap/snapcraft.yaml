@@ -1,6 +1,6 @@
 name: micropython
 version: "1.9.4"
-summary: MicroPython Unix port
+summary: Unofficial MicroPython Unix port
 description: |
     MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
 
