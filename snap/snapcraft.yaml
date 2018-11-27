@@ -26,7 +26,8 @@ parts:
     source-type: tar
     override-build: |
       cd ports/unix
-      make axtls && make
+      make axtls
+      make
       mkdir $SNAPCRAFT_PART_INSTALL/bin
       cp micropython $SNAPCRAFT_PART_INSTALL/bin
     prime:
