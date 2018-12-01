@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=MicroPython
+Comment=MicroPython Unix port
+Exec=micropython
+Icon=${SNAP}/meta/gui/micropython.png
+Type=Application
+Categories=Development;Utility;
+Terminal=true
+NoDisplay=true
