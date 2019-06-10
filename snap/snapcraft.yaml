@@ -1,5 +1,5 @@
 name: micropython
-version: "1.10"
+version: "1.11"
 summary: MicroPython Unix port
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
@@ -22,6 +22,6 @@ build-packages:
 parts:
   micropython:
     plugin: make
-    source: https://github.com/micropython/micropython/releases/download/v1.10/micropython-1.10.tar.gz
+    source: https://github.com/micropython/micropython/releases/download/v1.11/micropython-1.11.tar.gz
     source-subdir: ports/unix
     source-type: tar
