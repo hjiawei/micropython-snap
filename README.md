@@ -1,4 +1,4 @@
-# Unofficial MicroPython Snap app
+# Unofficial MicroPython Snap App
 
 [![micropython](https://snapcraft.io//micropython/badge.svg)](https://snapcraft.io/micropython)
 
