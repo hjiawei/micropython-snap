@@ -1,5 +1,5 @@
 name: micropython
-version: "1.12"
+version: "1.13"
 summary: MicroPython Unix port
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
@@ -23,7 +23,7 @@ build-packages:
 parts:
   micropython:
     plugin: nil
-    source: https://github.com/micropython/micropython/releases/download/v1.12/micropython-1.12.tar.gz
+    source: https://github.com/micropython/micropython/releases/download/v1.13/micropython-1.13.tar.gz
     source-type: tar
     override-build: |
       cd mpy-cross
