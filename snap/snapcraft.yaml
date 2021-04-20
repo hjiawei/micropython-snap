@@ -23,7 +23,7 @@ build-packages:
 parts:
   micropython:
     plugin: nil
-    source: https://github.com/micropython/micropython/releases/download/v1.14/micropython-1.14.tar.xz
+    source: https://github.com/micropython/micropython/releases/download/v1.15/micropython-1.15.tar.xz
     source-type: tar
     override-build: |
       cd mpy-cross
