@@ -1,5 +1,5 @@
 name: micropython
-version: "1.14"
+version: "1.15"
 summary: MicroPython Unix port
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
