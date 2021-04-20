@@ -22,13 +22,24 @@ build-packages:
 
 parts:
   micropython:
+    after:
+      - patches
     plugin: nil
     source: https://github.com/micropython/micropython/releases/download/v1.15/micropython-1.15.tar.xz
     source-type: tar
     override-build: |
+      patch -p1 < $SNAPCRAFT_STAGE/0001-Alwasy-get-release-version-from-conf.py.patch
       cd mpy-cross
       make
       cd ../ports/unix
       make
       mkdir $SNAPCRAFT_PART_INSTALL/bin
       cp micropython $SNAPCRAFT_PART_INSTALL/bin
+  patches:
+    source: snap/patches
+    plugin: dump
+    prime:
+      - -*
+  desktop:
+    plugin: dump
+    source: snap/gui
