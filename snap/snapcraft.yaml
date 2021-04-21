@@ -36,7 +36,7 @@ parts:
       mkdir $SNAPCRAFT_PART_INSTALL/bin
       cp micropython $SNAPCRAFT_PART_INSTALL/bin
   patches:
-    source: snap/patches
+    source: patches
     plugin: dump
     prime:
       - -*
