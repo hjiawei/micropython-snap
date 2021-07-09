@@ -4,7 +4,7 @@ summary: MicroPython linux version
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
 
-base: core18
+base: core20
 confinement: strict
 grade: stable
 
