@@ -1,5 +1,5 @@
 name: micropython
-version: "1.15"
+version: "1.16"
 summary: MicroPython linux version
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
@@ -25,7 +25,7 @@ parts:
     after:
       - patches
     plugin: nil
-    source: https://github.com/micropython/micropython/releases/download/v1.15/micropython-1.15.tar.xz
+    source: https://github.com/micropython/micropython/releases/download/v1.16/micropython-1.16.tar.xz
     source-type: tar
     override-build: |
       patch -p1 < $SNAPCRAFT_STAGE/0001-Alwasy-get-release-version-from-conf.py.patch
