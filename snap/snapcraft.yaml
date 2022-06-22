@@ -1,16 +1,16 @@
 name: micropython
-version: "1.18"
+version: "1.19"
 summary: MicroPython linux version
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
 
-base: core18
+base: core20
 confinement: strict
 grade: stable
 
 apps:
   micropython:
-    command: bin/micropython
+    command: usr/local/bin/micropython
     plugs:
       - home
       - network
@@ -22,22 +22,10 @@ build-packages:
 
 parts:
   micropython:
-    after:
-      - patches
-    plugin: nil
-    source: https://github.com/micropython/micropython/releases/download/v1.18/micropython-1.18.tar.xz
+    plugin: make
+    source: https://github.com/micropython/micropython/releases/download/v1.19/micropython-1.19.tar.xz
     source-type: tar
-    override-build: |
-      patch -p1 < $SNAPCRAFT_STAGE/0001-Alwasy-get-release-version-from-conf.py.patch
-      cd ports/unix
-      make
-      mkdir $SNAPCRAFT_PART_INSTALL/bin
-      cp micropython $SNAPCRAFT_PART_INSTALL/bin
-  patches:
-    source: patches
-    plugin: dump
-    prime:
-      - -*
+    source-subdir: ports/unix
   desktop:
     plugin: dump
     source: snap/gui
