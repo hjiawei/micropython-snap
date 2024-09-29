@@ -1,0 +1,30 @@
+From 9832fa91b73281105cb0bba4cd5f4532c0f6fd3b Mon Sep 17 00:00:00 2001
+From: Jiawei Huang <hjiawei@gmail.com>
+Date: Sat, 28 Sep 2024 22:54:53 -0700
+Subject: [PATCH] Get version from mpconfig before git
+
+---
+ py/makeversionhdr.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/py/makeversionhdr.py b/py/makeversionhdr.py
+index cb7325e41..716e85882 100644
+--- a/py/makeversionhdr.py
++++ b/py/makeversionhdr.py
+@@ -105,11 +105,11 @@ def make_version_header(repo_path, filename):
+     if "MICROPY_GIT_TAG" in os.environ:
+         git_tag = os.environ["MICROPY_GIT_TAG"]
+         git_hash = os.environ.get("MICROPY_GIT_HASH")
++    if git_tag is None:
++        git_tag = get_version_info_from_mpconfig(repo_path)
+     if git_tag is None:
+         git_tag = get_version_info_from_git(repo_path)
+         git_hash = get_hash_from_git(repo_path)
+-    if git_tag is None:
+-        git_tag = get_version_info_from_mpconfig(repo_path)
+ 
+     if not git_tag:
+         print("makeversionhdr.py: Error: No version information available.")
+-- 
+2.46.2
+
