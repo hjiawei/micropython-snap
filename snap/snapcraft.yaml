@@ -1,10 +1,10 @@
 name: micropython
-version: "1.23.0"
+version: "1.27.0"
 summary: MicroPython linux version
 description: |
   MicroPython is a lean and efficient Python implementation for microcontrollers and constrained systems.
 
-base: core22
+base: core24
 confinement: strict
 grade: stable
 
@@ -25,7 +25,7 @@ parts:
     after:
       - patches
     plugin: make
-    source: https://github.com/micropython/micropython/releases/download/v1.23.0/micropython-1.23.0.tar.xz
+    source: https://github.com/micropython/micropython/releases/download/v1.27.0/micropython-1.27.0.tar.xz
     source-subdir: ports/unix
     source-type: tar
   patches:
